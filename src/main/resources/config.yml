@@ -1,0 +1,113 @@
+# ============================================================================
+#  MossDuelRoom  -  wulnrydev
+#  BoxMining 1v1 Duel Odasi
+#
+#  Kurulum (oyun ici, mossduelroom.admin yetkisi ile):
+#    1) Arenanin bir kosesine gecip  /1v1 pos1
+#    2) Capraz kosesine gecip        /1v1 pos2
+#    3) /1v1 setarena                -> arena bolgesini kaydeder
+#    4) Kapinin bir kosesinde        /1v1 pos1
+#    5) Kapinin diger kosesinde      /1v1 pos2
+#    6) /1v1 addgate BEDROCK         -> kapi bolgesini ekler (birden fazla olabilir)
+#    7) Spawn noktasinda             /1v1 setspawn
+#    8) /1v1 bilgi                   -> kurulumu dogrular
+# ============================================================================
+
+settings:
+  # Iki oyuncu arenaya girdiginde baslayan geri sayim (saniye).
+  countdown-seconds: 10
+
+  # Geri sayimin chat'e yazilacagi saniyeler. Digerlerinde sadece title/actionbar.
+  countdown-announce-seconds: [10, 5, 4, 3, 2, 1]
+
+  # Oldurme aninda baslayan ganimet sandigi erisim suresi (saniye).
+  loot-seconds: 30
+
+  # Beraberlik teklifinin gecerlilik suresi (saniye).
+  draw-request-timeout: 20
+
+  # Ganimet GUI satir sayisi (1-6). Bir oyuncunun tum envanteri 41 slot tutar.
+  loot-gui-rows: 6
+
+  # Aktif duello varken arenaya baskalarinin girmesi engellensin mi?
+  # (mossduelroom.bypass yetkisi olanlar etkilenmez)
+  block-spectators: true
+
+  # Duellocular ile disaridaki oyuncular arasindaki hasar engellensin mi?
+  protect-duel: true
+
+  # Ganimet suresi boyunca kazanan oyuncu hasar almasin mi?
+  invulnerable-winner: true
+
+  # Savas basladiginda oyuncular iyilestirilsin / efektleri temizlensin mi?
+  heal-on-start: true
+  clear-effects-on-start: false
+
+  # Olen oyuncunun XP'si yere dusssun mu? (false = XP de silinir)
+  drop-exp: false
+
+  # Kapi bloklari yerlestirilirken fizik (kum dusmesi, su akmasi vb.) uygulansin mi?
+  # false = cok daha hizli, onerilen ayar.
+  gate-physics: false
+
+  # Savas sirasinda oyuncu cikis yaparsa envanteri rakibine ganimet olarak verilsin mi?
+  # (combat-log cezasi). Varsayilan kapali.
+  punish-combat-log: false
+
+  # Konsola detayli hata/ayiklama ciktisi.
+  debug: false
+
+# ---------------------------------------------------------------------------
+# ARENA BOLGESI  (iki capraz kose - icine giren oyuncular algilanir)
+# ---------------------------------------------------------------------------
+arena:
+  world: world
+  pos1:
+    x: 0
+    y: 64
+    z: 0
+  pos2:
+    x: 10
+    y: 74
+    z: 10
+
+# ---------------------------------------------------------------------------
+# SPAWN  (duello bitince oyuncularin isinlanacagi nokta)
+# ---------------------------------------------------------------------------
+spawn:
+  world: world
+  x: 0.5
+  y: 65.0
+  z: 0.5
+  yaw: 0.0
+  pitch: 0.0
+
+# ---------------------------------------------------------------------------
+# KAPILAR  (savas baslayinca doldurulur, bitince eski haline dondurulur)
+# Birden fazla kapi tanimlanabilir. /1v1 addgate <material> ile eklenir.
+# ---------------------------------------------------------------------------
+gates:
+  gate1:
+    material: BEDROCK
+    pos1:
+      x: 0
+      y: 64
+      z: 0
+    pos2:
+      x: 0
+      y: 67
+      z: 3
+
+# ---------------------------------------------------------------------------
+# SESLER  (bos birakilirsa veya gecersizse sessizce yok sayilir)
+# Format: SES_ADI:ses_seviyesi:perde
+# ---------------------------------------------------------------------------
+sounds:
+  enabled: true
+  countdown: "BLOCK_NOTE_BLOCK_HAT:1.0:1.4"
+  fight-start: "ENTITY_ENDER_DRAGON_GROWL:0.6:1.2"
+  win: "ENTITY_PLAYER_LEVELUP:1.0:1.2"
+  lose: "ENTITY_VILLAGER_NO:1.0:0.8"
+  draw: "BLOCK_NOTE_BLOCK_PLING:1.0:1.0"
+  loot-open: "BLOCK_CHEST_OPEN:1.0:1.2"
+  loot-expire: "BLOCK_CHEST_LOCKED:1.0:1.0"

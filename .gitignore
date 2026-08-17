@@ -1,0 +1,86 @@
+# ---------------------------------------------------------------------------
+# Maven
+# ---------------------------------------------------------------------------
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# ---------------------------------------------------------------------------
+# Gradle (alternatif derleme kullanilirsa)
+# ---------------------------------------------------------------------------
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# ---------------------------------------------------------------------------
+# Derleme ciktilari
+# ---------------------------------------------------------------------------
+*.class
+*.jar
+*.war
+*.ear
+!.mvn/wrapper/maven-wrapper.jar
+hs_err_pid*
+replay_pid*
+
+# ---------------------------------------------------------------------------
+# IDE
+# ---------------------------------------------------------------------------
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.vscode/
+.settings/
+.classpath
+.project
+bin/
+nbproject/
+.nb-gradle/
+
+# ---------------------------------------------------------------------------
+# Test sunucusu (yerel gelistirme)
+# ---------------------------------------------------------------------------
+run/
+server/
+testserver/
+*.log
+logs/
+crash-reports/
+world/
+world_nether/
+world_the_end/
+eula.txt
+server.properties
+banned-*.json
+ops.json
+whitelist.json
+usercache.json
+permissions.yml
+bukkit.yml
+spigot.yml
+paper*.yml
+paper/
+cache/
+libraries/
+versions/
+plugins/
+
+# ---------------------------------------------------------------------------
+# Isletim sistemi
+# ---------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+desktop.ini
+*.swp
+*~

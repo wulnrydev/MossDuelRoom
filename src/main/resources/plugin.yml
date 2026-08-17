@@ -1,0 +1,26 @@
+name: MossDuelRoom
+version: '${project.version}'
+main: dev.wulnrydev.mossduelroom.MossDuelRoom
+api-version: '1.20'
+author: wulnrydev
+description: BoxMining icin optimize edilmis 1v1 duel odasi sistemi
+website: https://boxmining.net
+folia-supported: true
+
+commands:
+  1v1:
+    description: MossDuelRoom duel komutlari
+    usage: /1v1 yardim
+    aliases:
+      - mossduel
+
+permissions:
+  mossduelroom.use:
+    description: Temel duel komutlarini kullanma yetkisi
+    default: true
+  mossduelroom.admin:
+    description: Arena kurulum ve reload yetkisi
+    default: op
+  mossduelroom.bypass:
+    description: Aktif duello sirasinda arenaya girebilme yetkisi
+    default: op

@@ -1,0 +1,116 @@
+# ============================================================================
+#  MossDuelRoom  -  Dil Dosyasi
+#
+#  RENK DUZENI (tasarim dili):
+#    &7          -> Normal govde metni
+#    &#00D420    -> Birinci vurgu (onemli kelimeler, oyuncu isimleri)
+#    &#ffd500    -> Ikinci vurgu (sure, rakam, ekstra detay)
+#    &0          -> Menu / GUI basliklari (her zaman &0 ile baslar)
+#
+#  Hex renk kullanimi: &#RRGGBB     Ornek: &#00D420
+#  Bir mesaji tamamen kapatmak icin degerini "" (bos) birakin.
+# ============================================================================
+
+prefix: "&#15FF08BoxMining &8▸ &r"
+
+general:
+  no-permission: "%prefix%&7Bu islem icin gerekli &#00D420yetkiye &7sahip degilsiniz."
+  player-only: "&7Bu komut yalnizca oyun ici kullanilabilir."
+  unknown-command: "%prefix%&7Bilinmeyen komut. &#ffd500/1v1 yardim &7yazarak komut listesini goruntuleyebilirsiniz."
+  reloaded: "%prefix%&7Yapilandirma dosyalari &#00D420yeniden yuklendi&7. &8(&#ffd500%time%ms&8)"
+  not-configured: "%prefix%&7Duel arenasi henuz &#00D420yapilandirilmamis&7. Lutfen bir yetkili ile iletisime gecin."
+
+help:
+  lines:
+    - "&8&m                                                            "
+    - " &#15FF08BoxMining &8| &#00D420Duel Odasi"
+    - ""
+    - " &8▸ &#ffd500/1v1 berabere &8- &7Rakibinize beraberlik teklif edersiniz."
+    - " &8▸ &#ffd500/1v1 sandik &8- &7Ganimet sandiginizi yeniden acarsiniz."
+    - " &8▸ &#ffd500/1v1 yardim &8- &7Bu menuyu goruntulersiniz."
+    - "%admin%"
+    - "&8&m                                                            "
+  admin-lines:
+    - ""
+    - " &#00D420Yonetici Komutlari"
+    - " &8▸ &#ffd500/1v1 pos1 &8| &#ffd500/1v1 pos2 &8- &7Kose secimi yaparsiniz."
+    - " &8▸ &#ffd500/1v1 setarena &8- &7Secili bolgeyi arena olarak kaydedersiniz."
+    - " &8▸ &#ffd500/1v1 addgate <blok> &8- &7Secili bolgeyi kapi olarak eklersiniz."
+    - " &8▸ &#ffd500/1v1 cleargates &8- &7Tum kapi bolgelerini silersiniz."
+    - " &8▸ &#ffd500/1v1 setspawn &8- &7Cikis noktasini belirlersiniz."
+    - " &8▸ &#ffd500/1v1 bilgi &8- &7Kurulum durumunu goruntulersiniz."
+    - " &8▸ &#ffd500/1v1 reload &8- &7Yapilandirmayi yeniden yuklersiniz."
+
+arena:
+  waiting: "%prefix%&7Duellonun baslamasi icin &#ffd500bir oyuncu &7daha bekleniyor."
+  spectator-blocked: "%prefix%&7Arenada devam eden bir duello var. Lutfen &#ffd500bekleyin&7."
+  reset: "%prefix%&7Arena &#00D420sifirlandi &7ve yeni duellolara hazir."
+
+countdown:
+  started: "%prefix%&7Duello baslatiliyor. Rakibiniz: &#00D420%opponent%"
+  chat: "%prefix%&7Duellonun baslamasina &#ffd500%seconds% &7saniye kaldi."
+  title: "&#00D420DUELLO"
+  subtitle: "&7Baslangica &#ffd500%seconds% &7saniye"
+  actionbar: "&7Hazirlanin &8▸ &#ffd500%seconds%s"
+  cancelled: "%prefix%&7Duello iptal edildi. &8(&#ffd500rakip bolgeden ayrildi&8)"
+  fight-title: "&#00D420SAVAS BASLADI"
+  fight-subtitle: "&7Rakibiniz &8▸ &#00D420%opponent%"
+  fight-chat: "%prefix%&7Arena kapilari &#00D420kapatildi&7. Savas basladi, bol sans."
+
+draw:
+  not-in-duel: "%prefix%&7Su anda aktif bir duelloda degilsiniz."
+  not-fighting: "%prefix%&7Beraberlik teklifi yalnizca savas sirasinda gonderilebilir."
+  sent: "%prefix%&7Beraberlik teklifiniz &#00D420%opponent% &7oyuncusuna iletildi. &8(&#ffd500%seconds%s&8)"
+  already-sent: "%prefix%&7Bekleyen bir beraberlik teklifiniz zaten var. &8(&#ffd500%seconds%s&8)"
+  received: "%prefix%&#00D420%player% &7size &#00D420beraberlik &7teklif etti. Kabul etmek icin &#ffd500tiklayin&7."
+  received-hover: "&7Teklifi kabul etmek icin &#00D420tiklayin\n&8▸ &#ffd500/1v1 berabere"
+  received-command: "/1v1 berabere"
+  expired: "%prefix%&7Beraberlik teklifinin suresi &#ffd500doldu&7."
+  accepted: "%prefix%&7Beraberlik &#00D420kabul edildi&7. Duello sona erdi."
+  accepted-title: "&#00D420BERABERE"
+  accepted-subtitle: "&7Duello beraberlikle sonuclandi"
+
+duel:
+  win-chat: "%prefix%&#00D420%opponent% &7adli oyuncuyu maglup ettiniz."
+  win-title: "&#00D420ZAFER"
+  win-subtitle: "&7Ganimet sandiginiz &8▸ &#ffd500%seconds%s"
+  lose-chat: "%prefix%&#00D420%opponent% &7adli oyuncuya yenildiniz. Esyalariniz rakibinize aktarildi."
+  lose-title: "&#ffd500MAGLUBIYET"
+  lose-subtitle: "&7Kazanan &8▸ &#00D420%opponent%"
+  opponent-quit: "%prefix%&7Rakibiniz oyundan ayrildi. Duello sona erdi."
+  teleported: "%prefix%&7Cikis noktasina &#00D420isinlandiniz&7."
+
+loot:
+  # GUI basligi her zaman &0 ile baslamalidir.
+  gui-title: "&0%player% &0▸ Ganimet"
+  opened: "%prefix%&7Ganimet sandigi acildi. Esyalari almak icin &#ffd500%seconds% &7saniyeniz var."
+  reopen-hint: "%prefix%&7Sandigi yeniden acmak icin &#ffd500/1v1 sandik &7komutunu kullanabilirsiniz. &8(&#ffd500%seconds%s&8)"
+  reopened: "%prefix%&7Ganimet sandigi yeniden acildi. Kalan sure: &#ffd500%seconds% &7saniye."
+  actionbar: "&7Ganimet erisimi &8▸ &#ffd500%seconds%s"
+  warning: "%prefix%&7Ganimet erisiminizin bitmesine &#ffd500%seconds% &7saniye kaldi."
+  expired: "%prefix%&7Ganimet suresi doldu. Alinmayan esyalar &#00D420silindi&7."
+  no-access: "%prefix%&7Su anda erisebileceginiz bir ganimet sandigi bulunmuyor."
+  cannot-insert: "%prefix%&7Ganimet sandigina esya &#ffd500koyamazsiniz&7."
+
+setup:
+  pos-set: "%prefix%&#00D420%pos% &7konumu ayarlandi. &8(&#ffd500%x%, %y%, %z%&8)"
+  need-positions: "%prefix%&7Once &#ffd500/1v1 pos1 &7ve &#ffd500/1v1 pos2 &7ile iki kose secmelisiniz."
+  arena-set: "%prefix%&7Arena bolgesi &#00D420kaydedildi&7. &8(&#ffd500%blocks% &8blok)"
+  gate-added: "%prefix%&#00D420%name% &7kapisi eklendi. &8(&#ffd500%material%&8, &#ffd500%blocks% &8blok)"
+  gates-cleared: "%prefix%&7Tum kapi bolgeleri &#00D420silindi&7."
+  spawn-set: "%prefix%&7Cikis noktasi &#00D420kaydedildi&7. &8(&#ffd500%x%, %y%, %z%&8)"
+  invalid-material: "%prefix%&#ffd500%material% &7gecerli bir blok turu degil."
+  different-world: "%prefix%&7Secilen iki kose &#ffd500ayni dunyada &7olmalidir."
+  info:
+    - "&8&m                                                            "
+    - " &#15FF08BoxMining &8| &#00D420Kurulum Durumu"
+    - ""
+    - " &8▸ &7Dunya &8» &#ffd500%world%"
+    - " &8▸ &7Arena &8» &#ffd500%arena%"
+    - " &8▸ &7Kapilar &8» &#ffd500%gates%"
+    - " &8▸ &7Cikis Noktasi &8» &#ffd500%spawn%"
+    - " &8▸ &7Durum &8» &#00D420%status%"
+    - "&8&m                                                            "
+  info-ready: "Hazir"
+  info-missing: "Eksik yapilandirma"
+  info-none: "Tanimlanmamis"
